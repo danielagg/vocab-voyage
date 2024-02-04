@@ -1,7 +1,6 @@
-import { registerRootComponent } from "expo";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { Text, TextInput, View, Pressable } from "react-native";
+import { Text, View, Pressable } from "react-native";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -20,10 +19,13 @@ export default function Index() {
         </View>
       </View>
       <View className="flex-1 items-start justify-end w-full">
-        <Pressable className="bg-gray-100 w-full rounded-2xl p-4 flex items-center justify-center my-10">
-          <Text className="text-black text-lg font-bold">Start</Text>
+        <Pressable className="bg-gray-100 w-full rounded-2xl py-3 flex items-center justify-center my-10">
+          <Link href="/landing">
+            <Text className="text-black text-lg font-bold">Start</Text>
+          </Link>
         </Pressable>
       </View>
+      <StatusBar style="dark" />
     </View>
   );
 }
