@@ -26,7 +26,6 @@ export default function Index() {
       axios
         .get(url)
         .then((response) => {
-          console.log(response.data);
           setCurrentWord(response.data);
           setIsSuccess(null);
         })
@@ -64,7 +63,7 @@ export default function Index() {
         <Text className="text-red-100 font-bold text-5xl">Incorrect</Text>
         <Text className="text-red-100 text-lg">
           '{currentWord?.dutch}' means '
-          {currentWord?.englishTranslations.join(", ")}''.
+          {currentWord?.englishTranslations.join(", ")}'
         </Text>
       </View>
     );
@@ -104,7 +103,6 @@ export default function Index() {
             value={text}
             style={{ color: "#fff" }}
             onChangeText={(text) => {
-              console.log(text); // todo: if enter...
               setText(text);
             }}
             underlineColorAndroid="transparent"
